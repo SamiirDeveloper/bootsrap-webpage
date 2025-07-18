@@ -1,8 +1,8 @@
-# Bootstrap webpage 
+# Bootstrap Webpage 
 
 ## Overview
 
-This project is a simple responsive webpage built with Bootstrap 5. It features a registration form and a user submissions table. The form collects a user's first name and email with validation and a terms & conditions checkbox. The table displays simulated user data to demonstrate Bootstrap's table styling and responsiveness. It also includes about me and contact page
+This project is a simple responsive webpage built with Bootstrap 5. It tests my ability to create a registration form and a user submissions table. The form collects a user's first name and email with validation and a terms & conditions checkbox. The table displays simulated user data to demonstrate Bootstrap's table styling and responsiveness. It also includes About Me and Contact pages.
 
 ## Features
 
@@ -15,15 +15,15 @@ This project is a simple responsive webpage built with Bootstrap 5. It features 
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- Bootstrap 5.3.3
-- Font Awesome 6.5.0
+- HTML5  
+- CSS3  
+- Bootstrap 5.3.3  
+- Font Awesome 6.5.0  
 
 ## Project Structure
 
 - `index.html` — Main webpage with form, table, navbar, and footer.
-- `stylesheet.css` — Optional additional CSS styling.
+- `about.html`, `contact.html` — About Me and Contact pages.
 - External libraries loaded via CDN:
   - Bootstrap CSS and JS
   - Font Awesome icons
@@ -44,8 +44,10 @@ This project is a simple responsive webpage built with Bootstrap 5. It features 
 
 ## Author
 
-Samir Developer  
-[LinkedIn](https://www.linkedin.com/in/samiirdeveloper) | [GitHub](https://github.com/SamiirDeveloper)
+**Samir Developer**  
+[Portfolio](https://SamirDeveloper.com)  
+[LinkedIn](https://www.linkedin.com/in/samiirdeveloper)  
+[GitHub](https://github.com/SamiirDeveloper)
 
 ---
 
