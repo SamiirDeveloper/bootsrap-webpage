@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Building a Webpage with Bootstrap</title>
+  <title>Bootstrap Webpage</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="stylesheet.css" />
   <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
@@ -18,14 +17,14 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Bootstrap Webpage</a>
+      <a class="navbar-brand" href="index.html">My Bootstrap Webpage</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -33,78 +32,123 @@
     </div>
   </nav>
 
-  <!-- Main Content Wrapper: grow to fill space between fixed navbar & footer -->
-  <main class="container-fluid flex-grow-1 pt-5 mt-4 px-3">
+  <!-- Main -->
+  <main class="flex-grow-1 pt-5 mt-5">
+    <div class="container">
 
-    <h1 class="text-center mt-4 mb-4">Welcome to My Bootstrap Webpage</h1>
-    <p class="text-center mb-5">This is a simple webpage built using Bootstrap.</p>
+      <!-- Intro -->
+      <section class="bg-dark text-white p-4 rounded mb-5">
+        <h1 class="text-center mb-3">Welcome to My Bootstrap Webpage</h1>
+        <p class="text-center mb-0">This is a simple webpage built using Bootstrap.</p>
+      </section>
 
-    <!-- Registration Form (full width, stacked) -->
-    <section class="mb-5 mx-auto" style="max-width: 500px;">
-      <h2 class="mb-4 text-center">Registration Form</h2>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="name" required placeholder="Enter your first name" />
+      <!-- Form -->
+      <section class="mb-5">
+        <div class="p-4 border rounded bg-light">
+          <h2 class="text-center border-bottom pb-2 mb-4">Registration Form</h2>
+          <form name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <div class="mb-3">
+              <label for="name" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <!-- Checkbox to trigger modal -->
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="termsCheck" required />
+              <label class="form-check-label" for="termsCheck">
+                I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a>.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required placeholder="Enter your email" />
+      </section>
+
+      <!-- Terms and Conditions Modal -->
+      <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="termsModalLabel">Terms and Conditions for Registration</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4 py-3">
+              <p>By registering on this website, you agree to the following terms:</p>
+              <ol>
+                <li><strong>Information Provided:</strong> You agree to provide accurate and truthful information,
+                  including your full name and a valid email address.</li>
+                <li><strong>Use of Information:</strong> The personal information you provide will be used solely for
+                  the purpose of account registration, communication, and service updates.</li>
+                <li><strong>Privacy:</strong> Your information will be stored securely and will not be shared with third
+                  parties without your consent, except as required by law.</li>
+                <li><strong>Communication:</strong> By registering, you consent to receive emails related to your
+                  account and occasional updates about our services. You may unsubscribe at any time.</li>
+                <li><strong>User Responsibility:</strong> You are responsible for maintaining the confidentiality of
+                  your registration information and for all activities under your account.</li>
+                <li><strong>Changes to Terms:</strong> We reserve the right to update these terms at any time. Continued
+                  use of the registration services constitutes acceptance of any changes.</li>
+                <li><strong>Consent:</strong> By submitting the registration form, you confirm that you have read,
+                  understood, and agree to these terms and conditions.</li>
+              </ol>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-
-        <div class="form-check mb-3">
-          <input type="checkbox" class="form-check-input" id="terms" required />
-          <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
-        </div>
-
-        <button type="submit" class="btn btn-success w-100">Submit</button>
-      </form>
-    </section>
-
-    <!-- User Table (full width, stacked) -->
-    <section class="mb-5 mx-auto" style="max-width: 700px;">
-      <h2 class="mb-4 text-center">User Submissions</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <thead class="table-dark">
-            <tr>
-              <th>Full Name</th>
-              <th>Website Role</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Samir Developer</td>
-              <td>Developer</td>
-              <td>inquiries@SamirDeveloper.com</td>
-            </tr>
-            <tr>
-              <td>Elena Gilbert</td>
-              <td>Designer</td>
-              <td>elenagilbert@SamirDeveloper.com</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
-    </section>
 
-    <!-- Responsive Image (full width, stacked) -->
-    <section class="text-center mb-5">
-      <img src="coding.avif" alt="Bootstrap Icons" class="img-fluid rounded" />
-    </section>
+      <!-- Table -->
+      <section class="mb-5 border">
+        <h2 class="text-center mb-4">User Submissions</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Full Name</th>
+                <th>Website Role</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Samir Developer</td>
+                <td>Developer</td>
+                <td>inquiries@SamirDeveloper.com</td>
+              </tr>
+              <tr>
+                <td>Elena Gilbert</td>
+                <td>Designer</td>
+                <td>elenagilbert@SamirDeveloper.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Image -->
+      <section class="d-flex flex-column text-center mb-5">
+        <a href="https://yourportfolio.com" class="btn btn-success mb-4" role="button">Click Here to Visit My Portfolio</a>
+        <img src="coding.avif" alt="Bootstrap Icons" class="img-fluid rounded" />
+      </section>
+
+    </div>
   </main>
 
-  <!-- Footer (sticky) -->
+  <!-- Footer -->
   <footer class="footer bg-dark text-white text-center py-4 mt-auto">
-    <div class="container px-5">
+    <div class="container-fluid px-4">
       <div class="row justify-content-center">
         <div class="col-md-6 mb-4">
-          <h5 class="mb-3">Connect with me</h5>
+          <h5 class="mb-3 border-bottom d-inline-block pb-1">Connect with me</h5>
           <ul class="list-unstyled mb-3">
             <li>
               <i class="fas fa-envelope me-2"></i>
-              <a href="mailto:inquiries@SamirDeveloper.com" class="text-light text-decoration-none">inquiries@SamirDeveloper.com</a>
+              <a href="mailto:inquiries@SamirDeveloper.com"
+                class="text-light text-decoration-none">inquiries@SamirDeveloper.com</a>
             </li>
           </ul>
 
@@ -129,24 +173,22 @@
 
         <!-- Location -->
         <div class="col-12">
-          <hr class="border-light my-3" />
           <p class="mb-2">
-            <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" width="20" height="20"
-              alt="Location Icon" class="me-2" />
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20" height="15"
-              alt="US Flag" class="me-2" />
+            <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" width="20" height="20" alt="Location Icon"
+              class="me-2" />
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"
+              height="15" alt="US Flag" class="me-2" />
             Seattle, WA. USA
           </p>
         </div>
       </div>
 
-      <hr class="border-light my-3 w-auto" style="max-width: fit-content;" />
-
+      <hr class="border-light my-3" />
       <p class="fs-6 mb-0">&copy; 2025 Samir Developer. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
